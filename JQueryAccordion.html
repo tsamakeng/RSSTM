@@ -1,0 +1,97 @@
+
+<HTML>
+<HEAD>
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+<script type="text/javascript">
+function allowDrop(ev)
+{
+ev.preventDefault();
+}
+
+function drag(ev)
+{
+ev.dataTransfer.setData("Text",ev.target.id);
+}
+
+function drop(ev)
+{
+ev.preventDefault();
+var data=ev.dataTransfer.getData("Text");
+ev.target.appendChild(document.getElementById(data));
+}
+</script>
+<TITLE>Simplest Accordion Menu using jQuery - DEMO</TITLE>
+<STYLE>
+body, input{
+	font-family: Calibri, Arial;
+}
+#accordion {
+	list-style: none;
+	padding: 0 0 0 0;
+	width: 270px;
+}
+#accordion li{
+	display: block;
+	background-color: #FF9927;
+	font-weight: bold;
+	margin: 1px;
+	cursor: pointer;
+	padding: 5 5 5 7px;
+	list-style: circle;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+}
+#accordion ul {
+	list-style: none;
+	padding: 0 0 0 0;
+	display: none;
+}
+#accordion ul li{
+	font-weight: normal;
+	cursor: auto;
+	background-color: #fff;
+	padding: 0 0 0 7px;
+}
+#accordion a {
+	text-decoration: none;
+}
+#accordion a:hover {
+	text-decoration: underline;
+}
+
+</STYLE>
+</HEAD>
+<BODY>
+<H2>Simplest Accordion Menu using jQuery - Demo</H2>
+<p>Click here to view the Tutorial: <a href="http://viralpatel.net/blogs/2009/09/create-accordion-menu-jquery.html">Accordion Menu in jQuery</a></p>
+<table>
+
+<script type="text/javascript" src="./Oct20/IncludeFile2.js"></script>
+ 
+<script type="text/javascript" src="./Oct13/IncludeFile1.js"></script>
+ 
+<script type="text/javascript" src="./Oct06/IncludeFile.js"></script>
+
+
+<? php 
+    require (./Oct27/IncludeFile3.php) 
+?> 
+
+
+</table>
+
+</BODY>
+<SCRIPT>
+$("#accordion > li").click(function(){
+
+	if(false == $(this).next().is(':visible')) {
+		$('#accordion > ul').slideUp(300);
+	}
+	$(this).next().slideToggle(300);
+});
+
+$('#accordion > ul:eq(0)').show();
+
+</script>
+</HTML>
